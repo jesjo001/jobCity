@@ -87,6 +87,7 @@ export const reminderSlice = createSlice({
             }
             state.value.push(newData);
           } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(error);
           }
       },
@@ -96,6 +97,7 @@ export const reminderSlice = createSlice({
       },
   
       updateReminder: (state, action) => {
+        // eslint-disable-next-line array-callback-return
         state.value.map((item) => {
           if (item.id === action.payload.id) {
             item.title = action.payload.title;
@@ -103,6 +105,7 @@ export const reminderSlice = createSlice({
             item.details = action.payload.details;
             item.dateString = action.payload.dateString;
             item.time = action.payload.time;
+            return item;
           }
         });
       },
