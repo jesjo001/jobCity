@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import { Card, CardContent, Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
 
 import ReminderModal from "../Modal/ReminderModal";
-import { useSelector } from "react-redux";
 
 const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +37,7 @@ const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
       return false
   }
 
-
-
-
   useEffect(() => {
-
     try {
       if(propsReady()){
         if( reminderList && reminderList.length > 0){
@@ -54,8 +50,7 @@ const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
     } catch (error) {
       console.error(error)
     }
-
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[reminderList,day,year])
 
   
