@@ -182,7 +182,7 @@ export default function TransitionsModal({
               />
             </LocalizationProvider>
             <Button variant="contained" onClick={(e) => handleClose(e,"dfs")}>Close Modal</Button>
-            <Button variant="contained" onClick={(e) => addReminderData(e)}>Add Reminder</Button>
+            <Button variant="contained" onClick={(e) => addReminderData(e)} style={{ backgroundColor:'#556C7F', color: 'white', fontWeight: "bold"}} className="calendar-day-primary-btn" >Add Reminder</Button>
 
    
             </Box>
