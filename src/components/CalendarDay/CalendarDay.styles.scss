@@ -43,14 +43,27 @@
     font-weight: bold !important;
     height: 50px;
     border: 1px solid rgb(80, 80, 80);
+    // background-color:  rgb(123, 122, 122);
+    background-color:  rgb(140, 140, 140);
+    color: aliceblue;
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 7px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     justify-items: center;
     align-content: center;
     align-items: center;
+
+    &:hover {
+      background-color: rgb(115, 115, 115);
+      height: 55px;
+
+      box-shadow: 6px 6px 22px -1px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 6px 6px 22px -1px rgba(0,0,0,0.51);
+    -moz-box-shadow: 6px 6px 22px -1px rgba(0,0,0,0.51);
+
+    }
   }
 
   &-reminder-title {
@@ -63,7 +76,17 @@
   &-reminder-date {
     padding: 5;
     padding-left: 10px;
+    font-weight: 500;
+  }
+
+  &-primary-btn {
+    color: white;
+    background-color: rgb(41, 117, 240);
     font-weight: lighter;
+
+    box-shadow: 8px 8px 22px 1px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 8px 8px 22px 1px rgba(0,0,0,0.51);
+    -moz-box-shadow: 8px 8px 22px 1px rgba(0,0,0,0.51);
   }
 
   &-text {
