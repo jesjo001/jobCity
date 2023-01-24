@@ -75,22 +75,20 @@ export const reminderSlice = createSlice({
       addReminder: (state, action) => {
 
         try {
-
-        let dateArray = action.payload.dateString.toString().split(' ');
-        let newData = {
-           id: uuidv4() ,
-           ...action.payload, 
-           dayName: dateArray[0], 
-           year: dateArray[3], 
-           monthDate: dateArray[2], 
-           monthName: dateArray[1], 
-           monthNum: getMonthNumber(dateArray[1])
+          let dateArray = action.payload.dateString.toString().split(' ');
+          let newData = {
+            id: uuidv4() ,
+            ...action.payload, 
+            dayName: dateArray[0], 
+            year: dateArray[3], 
+            monthDate: dateArray[2], 
+            monthName: dateArray[1], 
+            monthNum: getMonthNumber(dateArray[1])
+            }
+            state.value.push(newData);
+          } catch (error) {
+            console.log(error);
           }
-          state.value.push(newData);
-        } catch (error) {
-          console.log(error);
-        }
-        
       },
   
       deleteReminder: (state, action) => {
@@ -105,11 +103,6 @@ export const reminderSlice = createSlice({
             item.details = action.payload.details;
             item.dateString = action.payload.dateString;
             item.time = action.payload.time;
-          
-          } else { 
-            let newData = action.payload
-            newData.id = uuidv4();
-            state.value.push(newData)
           }
         });
       },

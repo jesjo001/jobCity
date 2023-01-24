@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { Button } from '@material-ui/core';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import _ from 'lodash';
 import { reminder } from 'services/reminder';
 
@@ -89,13 +89,12 @@ export default function TransitionsModal({
   const debouceSearch = _.debounce( async (cityName) => {
     setCity(cityName)
     await fetchWeather(cityName);
-  }, 1000) 
+  }, 200) 
 
   const fetchWeather = async(cityName) => {
 
     try {
       let date = dateString.slice(0,10)
-
       let result = await reminder.getWeatherRep(cityName, date)
       let weatherDays = result.data.days
 
@@ -105,11 +104,10 @@ export default function TransitionsModal({
 
       if(weather.length > 0 ) setWeatherRep({ weather: weather[0]})
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error)
     }
   }
-
-
 
   return (
     <div>
@@ -130,7 +128,7 @@ export default function TransitionsModal({
         <Fade in={isOpen}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              Add Reminder <span style={{ color: 'red'}}> {`${weatherRep.weather !== undefined ? weatherRep.weather.conditions : "" } - ${weatherRep.weather !== undefined ? weatherRep.weather.temp: ''} - ${weatherRep.weather !== undefined ? weatherRep.weather?.preciptype[0] :''}`}</span>
+              Add Reminder <span style={{ color: 'red'}}> {`${weatherRep.weather !== undefined ? weatherRep.weather.conditions : "" } - ${weatherRep.weather !== undefined ? weatherRep.weather.temp: ''} - ${weatherRep.weather?.preciptype.length > 0 ? weatherRep.weather?.preciptype[0] :''}`}</span>
             </Typography>
 
             <div>
