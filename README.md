@@ -1,46 +1,42 @@
-<div align="center">
-    <img src="https://git.jobsity.com/jobsity/react-interview-challenge/-/raw/main/public/jobsity-logo.png"/>
-</div>
 
-# React Interview Challenge
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Description
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-This project is designed to test your knowledge of front-end web technologies and assess your ability to create front-end UI products with attention to detail, cross-browser compatibility, standards, and reusability.
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/jesjo001/jobCity
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `.env`
+   ```js
+   REACT_APP_WEATHER_API_KEY = 'ENTER YOUR API';
+   ```
+
+   ### Usage
+   1. Click on a calendar date to open a pop up modal 
+   2. Enter details and click the ADD REMINDER button to add a reminder
+   3. Click on the delete button on the modal to delete task
+   4. Weather report is on the modal title area
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Assignment
-
-The goal of this exercise is to create a demo calendar application using React.
-
-You are provided a base application with a calendar page at `/calendar`. You must allow the user to create "reminder" cards, as described in the Mandatory features section.
-![CalendarJobsity](/uploads/57147905a7a9cc1e0cf46e7886c76ef7/CalendarJobsity.png)
-
-## Mandatory features
- - Ability to add "*reminders*" (max. 30 characters) for a day and time specified by the user.
- - Ability to include a city as a location for the reminder.
- - Ability to edit reminders - including changing text, city, day, and time.
- - Add a weather service call from [VisualCrossing](https://www.visualcrossing.com/weather/weather-data-services#) and get the average temperature forecast (e.g. 15° C) for the date of the calendar reminder based on the city.
- - Change the weekend days cells' color
-
-## Bonus (Optional)
-
-- Properly handle overflow when multiple reminders appear on the same date.
-- Unit test the functionality: *Ability to add "*reminders*" (max. 30 characters) for a day and time specified by the user.*
-
-## Considerations
-
- - Show us in the Readme all relevant information about your project.
- - The project is completely focused on Front-end. Ignore the Back-end.
- - Feel free to use small helper libraries for:
- -- UI Elements.
- -- Date/Time handling.
- - We have implemented Redux thunk for state management, but you may use any state manager you are familiar with.
- - Show us your capabilities in CSS and styling, if possible.
- - Feel free to use Typescript if you prefer it
-
-# How to deploy
-
- - Run `npm install` | `yarn install` to install all dependencies.
- - Run `npm start`   | `yarn run` to run the app locally.
- - You can find the project running on `localhost:3000`.
